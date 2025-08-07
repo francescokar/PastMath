@@ -1,6 +1,6 @@
-###############
-##  MODEL 2  ##
-###############
+############################
+##  PARAMETERS SCENARIO 2 ##
+############################
 
 # Cereal-based, hunting still quite important
 # Specialised dairy production

@@ -1,4 +1,5 @@
-PastMath<-function(param,pop){
+PastMath_Test <-function(param,pop=160,m_c=200,m_s=25,m_pi=80,y_c=700,y_s=135,
+                        A_c=1.4,A_s=0.3,frac_pastor=0.1,t_cheese=1,delta_f=2){
   source(param,local=T)
   
   # Number of livestock per person (hd/pn)
@@ -114,8 +115,7 @@ PastMath<-function(param,pop){
   
   # Labour return
   # ratio of the energy produced to the energy spent on the production
-  eta = day_per_yr/(T_plough+T_reap+T_cut+(1/5*tau_shear)+(1/5*tau_milk)
-                        +(1/5*tau_cheese))
+  eta = day_per_yr/(T_plough+T_reap+tau_shear+tau_milk+tau_cheese)
   
   return(rbind("1. Cereal area (ha)" = A_cereal,
                "2. Fallow (ha)" = A_fallow,
@@ -127,16 +127,20 @@ PastMath<-function(param,pop){
                "8. Intermediate meadow area (ha)" = A_meadow_mid,
                "9. Fraction of fallow area for fodder" = delta_meadow_low,
                "10. Fraction of grazing area for fodder" = delta_meadow_mid,
-               "11. Cereal yield (kg/ha)" = Y, "12. Fraction of field manured" = f_m,
-               "13. Cattle (hd)" = N_c, "13. Sheep/Goats (hd)" = N_s, 
-               "14. Pigs (hd)" = N_pi,"15. Ploughing time (days/pn)" = T_plough,
-               "16. Cereal reaping time (days/pn)" = T_reap,
-               "17. Grass cutting time (days/pn)" = T_cut, 
-               "18. Sheep shearing time (days/pn)" = tau_shear,
-               "19. Milking time (days/pn)" = tau_milk, 
-               "20. Cheese making time (days/pn)" = tau_cheese, 
-               "21. Wool production (kg)" = wool_kg,
-               "22. Cheese production (kg)" = cheese_kg, "23. Labour return" = eta))
+               "11. Cereal yield (kg/ha)" = Y, 
+               "12. Fraction of field manured" = f_m,
+               "13. Cattle (hd)" = N_c, 
+               "14. Sheep/Goats (hd)" = N_s, 
+               "15. Pigs (hd)" = N_pi,
+               "16. Ploughing time (days/pn)" = T_plough,
+               "17. Cereal reaping time (days/pn)" = T_reap,
+               "18. Grass cutting time (days/pn)" = T_cut, 
+               "19. Sheep shearing time (days/pn)" = tau_shear,
+               "20. Milking time (days/pn)" = tau_milk, 
+               "21. Cheese making time (days/pn)" = tau_cheese, 
+               "22. Wool production (kg)" = wool_kg,
+               "23. Cheese production (kg)" = cheese_kg, 
+               "24. Labour return" = eta))
   
-  }
+}
 

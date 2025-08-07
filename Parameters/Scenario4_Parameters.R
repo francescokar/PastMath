@@ -1,9 +1,9 @@
-###############
-##  MODEL 3  ##
-###############
+############################
+##  PARAMETERS SCENARIO 4 ##
+############################
 
-# More balanced farming and pastoralism
-# Specialised dairy production
+# Heavily farming-based
+# Very limited dairy production
 
 
 # CONVERSION FACTORS ####
@@ -12,8 +12,8 @@ m2_per_ha = 1.e4
 
 
 # DIETARY REQUIREMENT ####
-eps_g = 0.46  # cereal/pulse products
-eps_d = 0.46  # domestic animal products
+eps_g = 0.80  # cereal/pulse products
+eps_d = 0.12  # domestic animal products
 eps_f = 0.02  # wild fruits/nuts
 eps_w = 0.06  # wild animal products
 # reduced importance of wild fruit from 5% in Gregg 1988.
@@ -54,8 +54,8 @@ e_pi = 3000. # energy content (kcal/kg): pigs
 
 
 # DOMESTIC DAIRY PRODUCTS #####
-y_c = 700.  # surplus cow milk (l/yr/hd) after weaning)
-# calves are weaned when they are 3-4 months old
+y_c = 400.  # surplus cow milk (l/yr/hd) after weaning)
+# calves are weaned when they are 7-8 months old
 # we used the Black Anatolian Cattle = 1000 l/yr
 # cows were probably heavier and more productive, we can increase to 1000 l/yr
 # (which is approx. 5 times less than a current "grigia alpina")
@@ -63,17 +63,17 @@ y_c = 700.  # surplus cow milk (l/yr/hd) after weaning)
 # 50% of daily production ~2 l
 # 100% of daily production ~4 l
 # average value of 3 l accounts for variation in milk production and requirement
-# annual milk used for calves = 3 l * 3 months = 3 l * 90 days = 270
-# 1000 - 270 ~ 700
-# compatible with the range in Shukurov et al. 2015: 0-2000 l/yr
+# annual milk used for calves = 3 l * 7 months = 3 l * 210 days = 630
+# 1000 - 630 = ~ 400
+# same as Shukurov et al. 2015: 400 l/yr
 
-y_s = 135.   # surplus sheep/goat milk (l/yr/hd) after weaning
+y_s = 90.   # surplus sheep/goat milk (l/yr/hd) after weaning
 # traditional sheep breeds produce ~150 l/yr alpine goats ~280 l/yr
-# lambs/kids weaned at 2 months, they drink milk for 10% of their birth weight
-# birth weight 4.5 kg
-# 0.75 l/day * 60 days (2 months weaning) = 45 l/yr lamb/kid
-# surplus for sheep = 105 l; surplus goat = 235 l
-# as ratio sheep/goat is estimated 3/1, the surplus is ~ 135 l/yr
+# lambs/kids weaned at 4 months, they drink milk for 10% of their birth weight
+# birth weight 4.5 kg, with rapid increment
+# 0.75 l/day * 120 days (4 months weaning) = 90 l/yr lamb/kid
+# surplus for sheep = 60 l; surplus goat = 190 l
+# as ratio sheep/goat is estimated 3/1, the surplus is ~ 90 l/yr
 
 e_mc = 600.  # energy content (kcal/l): cow milk
 e_ms = 940.  # energy content (kcal/l): sheep/goat milk
@@ -84,12 +84,13 @@ e_ms = 940.  # energy content (kcal/l): sheep/goat milk
 # ANIMAL HUSBANDRY ####
 # for simplicity, these parameters consider adult animals only
 # 2/3-month old calves/lamb/kid do not contribute significantly to the energy intake
-k_c = 0.05    # fraction of cattle culled annually (/yr)
+k_c = 0.15    # fraction of cattle culled annually (/yr)
 k_s = k_c    # fraction of sheep/goats culled annually (/yr)
+# bovines and caprines are traditionally killed after two years for meat
 k_pi = 0.5   # fraction of pigs culled annually (/yr)
 # pigs are killed after one year
-kap_c = 0.52  # fraction of milking cows in cattle herd
-# 65% of herds were female, ~80% produce milk  (based on Ebersbach 2013)
+kap_c = 0.36  # fraction of milking cows in cattle herd
+# 45% of herds were female, ~80% produce milk  (based on Ebersbach 2013)
 kap_s = kap_c
 
 A_c = 1.3      # grazing area (ha/hd) 10 months cattle
